@@ -24,15 +24,15 @@ Please contact Chuck Haines (chaines@gmail.com) with any questions or feedback r
 
 1. Clone the forked repo
 ```bash
-    git clone https://github.com/noolan/frontendtest.git
+git clone https://github.com/noolan/frontendtest.git
 ```
 
 2. Install dependencies
 ```bash
-    npm install
+npm install
 ```
 
 3. Start the local server
 ```bash
-    npm run serve
+npm run serve
 ```
