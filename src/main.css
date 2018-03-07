@@ -1,0 +1,89 @@
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.6rem;
+}
+h2 {
+  padding-top: 2rem;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  width: 100vw;
+}
+main > section {
+  width: 528px;
+  max-width: 100%;
+  flex-grow: 3;
+  flex-shrink: 0;
+  background-color: #333;
+}
+main > aside {
+  width: 240px;
+  max-width: 100%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  background-color: #ccc;
+}
+
+figure {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  counter-reset: file;
+
+}
+figure > div {
+  height: 0;
+  padding-bottom: 100%;
+  background-color: #999;
+  position: relative;
+  z-index: 1;
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,.25);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+figure > div:nth-child(even) {
+  background-color: #666;
+}
+
+figure > div:nth-child(odd):nth-child(n+9):not(:nth-child(n+17)),
+figure > div:nth-child(odd):nth-child(n+25):not(:nth-child(n+33)),
+figure > div:nth-child(odd):nth-child(n+41):not(:nth-child(n+49)),
+figure > div:nth-child(odd):nth-child(n+57) {
+  background-color: #666;
+}
+figure > div:nth-child(even):nth-child(n+9):not(:nth-child(n+17)),
+figure > div:nth-child(even):nth-child(n+25):not(:nth-child(n+33)),
+figure > div:nth-child(even):nth-child(n+41):not(:nth-child(n+49)),
+figure > div:nth-child(even):nth-child(n+57) {
+  background-color: #999;
+}
+figure > div::after {
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  content: ' ';
+  background-color: #3ac6e9;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+figure > div:hover::after,
+figure > div:focus::after {
+  opacity: .25;
+}
+figure > div:focus {
+  z-index: 2;
+  transform: scale(1.1);
+  box-shadow: 1px 1px 2px 3px rgba(0,0,0,.25);
+  outline: none;
+}
